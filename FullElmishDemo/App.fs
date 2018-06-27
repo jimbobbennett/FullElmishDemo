@@ -70,7 +70,6 @@ type App() as app =
     let runner = 
         program
         |> Program.withConsoleTrace
-        |> Program.withDynamicView app
-        |> Program.run
+        |> Program.runWithDynamicView app
 
    
