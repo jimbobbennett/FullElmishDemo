@@ -15,6 +15,7 @@ module App =
     type Msg =
         | Go
         | Increment
+        | Popped
 
     let init() =
         { Count = 0; ShowWelcome = true }, Cmd.none
@@ -23,9 +24,11 @@ module App =
         match msg with
         | Increment -> { model with Count = model.Count + 1 }, Cmd.none
         | Go -> { model with ShowWelcome = false }, Cmd.none
+        | Popped -> { model with ShowWelcome = false }, Cmd.none
 
     let view model dispatch =
         Xaml.NavigationPage(
+            popped = (fun x -> dispatch Popped),
             pages = [
                 yield Xaml.ContentPage (
                                 padding = 20.,
