@@ -12,7 +12,7 @@
     <ProjectReference Include="..\FullElmishDemo\FullElmishDemo.fsproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Elmish.XamarinForms" Version="0.7.0" />
+    <PackageReference Include="Elmish.XamarinForms" Version="0.12.8" />
     <PackageReference Include="FSharp.Core" Version="4.5.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
     <PackageReference Include="FsUnit" Version="3.1.0" />

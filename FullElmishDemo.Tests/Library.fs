@@ -7,7 +7,7 @@ open NUnit.Framework
 open FsUnit
 
 module Test =
-    let getElementFromName<'T> name (parent : XamlElement) =
+    let getElementFromName<'T> name (parent : ViewElement) =
         let (c : ValueOption<'T>) = parent.TryGetAttribute name
         match c with
         | ValueSome x -> x
