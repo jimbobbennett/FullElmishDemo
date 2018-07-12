@@ -43,10 +43,10 @@ module Test =
     let ``Test view returns the right view``() =
         let m = { App.Model.Count = 27; App.Model.ShowWelcome = false}
         App.view m ignore 
-            |> getElementFromName<XamlElement[]> "Pages"
+            |> getElementFromName<ViewElement[]> "Pages"
             |> Array.head
-            |> getElementFromName<XamlElement> "Content"
-            |> getElementFromName<XamlElement[]> "Children"
+            |> getElementFromName<ViewElement> "Content"
+            |> getElementFromName<ViewElement[]> "Children"
             |> Array.find (fun x -> x.Create().GetType() = typedefof<Xamarin.Forms.Label>)
             |> getElementFromName<string> "Text"
             |> should equal "Count: 27"
@@ -56,6 +56,6 @@ module Test =
     let ``Test show welcome returns the right number of pages`` s l =
         let m = { App.Model.Count = 27; App.Model.ShowWelcome = s}
         App.view m ignore 
-            |> getElementFromName<XamlElement[]> "Pages"
+            |> getElementFromName<ViewElement[]> "Pages"
             |> Array.length
             |> should equal l
